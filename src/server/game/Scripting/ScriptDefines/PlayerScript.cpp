@@ -19,6 +19,13 @@
 #include "ScriptMgr.h"
 #include "ScriptMgrMacros.h"
 
+ // CUSTOM EVENT!
+void ScriptMgr::OnPlayerUpdateAllStats(Player* player) {
+    CALL_ENABLED_HOOKS(PlayerScript, PLAYERHOOK_ON_UPDATE_ALL_STATS, script->OnUpdateAllStats(player));
+}
+
+
+
 void ScriptMgr::OnBeforePlayerDurabilityRepair(Player* player, ObjectGuid npcGUID, ObjectGuid itemGUID, float& discountMod, uint8 guildBank)
 {
     CALL_ENABLED_HOOKS(PlayerScript, PLAYERHOOK_ON_BEFORE_DURABILITY_REPAIR, script->OnBeforeDurabilityRepair(player, npcGUID, itemGUID, discountMod, guildBank));

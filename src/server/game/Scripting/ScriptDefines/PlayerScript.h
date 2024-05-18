@@ -27,6 +27,11 @@
 
 enum PlayerHook
 {
+    // CUSTOM EVENT!
+    PLAYERHOOK_ON_UPDATE_ALL_STATS,
+
+
+
     PLAYERHOOK_ON_PLAYER_JUST_DIED,
     PLAYERHOOK_ON_PLAYER_RELEASED_GHOST,
     PLAYERHOOK_ON_SEND_INITIAL_PACKETS_BEFORE_ADD_TO_MAP,
@@ -436,6 +441,12 @@ public:
 
     // Called after computing the XP reward value for a quest
     virtual void OnQuestComputeXP(Player* /*player*/, Quest const* /*quest*/, uint32& /*xpValue*/) { }
+
+
+    // CUSTOM EVENT!
+    virtual void OnUpdateAllStats(Player* /*player*/) {}
+
+
 
     // Before durability repair action, you can even modify the discount value
     virtual void OnBeforeDurabilityRepair(Player* /*player*/, ObjectGuid /*npcGUID*/, ObjectGuid /*itemGUID*/, float&/*discountMod*/, uint8 /*guildBank*/) { }

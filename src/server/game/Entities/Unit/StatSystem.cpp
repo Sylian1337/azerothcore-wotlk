@@ -187,6 +187,12 @@ void Player::UpdateSpellDamageAndHealingBonus()
 
 bool Player::UpdateAllStats()
 {
+    LOG_ERROR("sql", "Start of UPDATE ALL STATS", 5);
+    //("Start of UPDATE ALL STATS");
+    // CUSTOM EVENT!
+    sScriptMgr->OnPlayerUpdateAllStats(this);
+    LOG_ERROR("sql", "After UPDATE ALL STATS");
+
     for (int8 i = STAT_STRENGTH; i < MAX_STATS; ++i)
     {
         float value = GetTotalStatValue(Stats(i));

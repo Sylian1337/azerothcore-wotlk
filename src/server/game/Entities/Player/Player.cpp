@@ -688,7 +688,7 @@ bool Player::Create(ObjectGuid::LowType guidlow, CharacterCreateInfo* createInfo
     // ensure player starts with full health
     UpdateAllStats();
     SetFullHealth();
-
+    LOG_ERROR("entities.player.items", "Testing");
     CheckAllAchievementCriteria();
 
     return true;
@@ -5725,6 +5725,7 @@ void Player::CheckAreaExploreAndOutdoor()
 
     if (!(currFields & val))
     {
+
         SetUInt32Value(PLAYER_EXPLORED_ZONES_1 + offset, (uint32)(currFields | val));
 
         UpdateAchievementCriteria(ACHIEVEMENT_CRITERIA_TYPE_EXPLORE_AREA, areaId);

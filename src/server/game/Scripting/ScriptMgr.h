@@ -294,6 +294,13 @@ public: /* AchievementCriteriaScript */
     bool OnCriteriaCheck(uint32 scriptId, Player* source, Unit* target, uint32 criteria_id);
 
 public: /* PlayerScript */
+
+    // CUSTOM EVENT!
+    void OnPlayerUpdateAllStats(Player* player);
+
+
+
+
     void OnBeforePlayerUpdate(Player* player, uint32 p_time);
     void OnPlayerUpdate(Player* player, uint32 p_time);
     void OnSendInitialPacketsBeforeAddToMap(Player* player, WorldPacket& data);
